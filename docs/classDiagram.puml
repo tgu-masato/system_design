@@ -1,0 +1,34 @@
+@startuml
+
+class User {
+    - id:int
+    - email:varchar
+    - password:varchar
+    - created_at:datetime
+    - updated_at:datetime
+
+    + regist_user():void
+    + login():void
+    + input_result(result:Result):void
+    + search_result(opponent_name:varchar):Result
+    + edit_result(result:Result):void
+    + delete_result(result:Result):void
+}
+
+
+class Result {
+    - id:int
+    - match_date:date
+    - match_name:varchar
+    - round:varchar
+    - opponent_name:varchar
+    - my_score:int
+    - opponent_score:int
+    - comment:varchar
+    - created_at:datetime
+    - updated_at:datetime
+}
+
+User "1" --- "0..*" Result
+
+@enduml
