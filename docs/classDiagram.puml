@@ -9,10 +9,7 @@ class User {
 
     + regist_user():void
     + login():void
-    + input_result(result:Result):void
-    + search_result(opponent_name:varchar):Result
-    + edit_result(result:Result):void
-    + delete_result(result:Result):void
+    + logout():void
 }
 
 
@@ -22,11 +19,17 @@ class Result {
     - match_name:varchar
     - round:varchar
     - opponent_name:varchar
-    - my_score:int
-    - opponent_score:int
+    - my_score:unsigned
+    - opponent_score:unsigned
     - comment:varchar
     - created_at:datetime
     - updated_at:datetime
+    - user_id:int
+
+    + input_result(result:Result):void
+    + search_result(opponent_name:varchar):Result
+    + edit_result(result:Result):void
+    + delete_result(result:Result):void
 }
 
 User "1" --- "0..*" Result
